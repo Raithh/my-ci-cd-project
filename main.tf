@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"  # Change this to your preferred AWS region
+  region = "eu-north-1"  # Change this to your preferred AWS region
 }
 
 resource "aws_s3_bucket" "website_bucket" {
