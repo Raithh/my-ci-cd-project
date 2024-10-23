@@ -14,7 +14,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Step 2: Set Up Node.js (for linting)
+    # Step 2: Set Up Node.js (for npm-based validation)
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
@@ -24,21 +24,17 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    # Step 4: HTML Validation
+    # Step 4: HTML Validation with HTMLHint (using npm)
     - name: Validate HTML files
-      uses: jakejarvis/html-proofer-action@v0.1.1
-      with:
-        args: ./index.html
+      run: npx htmlhint "index.html" 
 
-    # Step 5: CSS Validation
+    # Step 5: CSS Validation with stylelint (using npm)
     - name: Validate CSS files
-      uses: w3c-validator/w3c-css-validator@v1.0.0
-      with:
-        file: "./style.css"  # Specify your CSS file(s)
+      run: npx stylelint "style.css" 
 
-    # Step 6: JavaScript Linting with ESLint
+    # Step 6: JavaScript Linting with ESLint (using npm).
     - name: Lint JavaScript
-      run: npx eslint script.js  # Replace with the path to your JS file(s)
+      run: npx eslint script.js 
 
     # Step 7: Configure AWS Credentials
     - name: Configure AWS credentials
