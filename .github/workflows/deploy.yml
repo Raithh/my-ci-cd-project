@@ -12,9 +12,9 @@ jobs:
     steps:
     # Step 1: Checkout Code
     - name: Checkout code
-      uses: actions/checkout@v3  # Update to the latest version
+      uses: actions/checkout@v3
 
-    # Step 2: Set Up Node.js (for linting and validation)
+    # Step 2: Set Up Node.js (for linting)
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
@@ -26,19 +26,19 @@ jobs:
 
     # Step 4: HTML Validation
     - name: Validate HTML files
-      uses: cybocfi/validate-html@v1
+      uses: jakejarvis/html-proofer-action@v0.1.1
       with:
-        path: "./index.html"
+        args: ./index.html
 
     # Step 5: CSS Validation
     - name: Validate CSS files
-      uses: jonneal/css-validator-action@v1
+      uses: w3c-validator/w3c-css-validator@v1.0.0
       with:
-        files: "./style.css" 
+        file: "./style.css"  # Specify your CSS file(s)
 
     # Step 6: JavaScript Linting with ESLint
     - name: Lint JavaScript
-      run: npx eslint script.js
+      run: npx eslint script.js  # Replace with the path to your JS file(s)
 
     # Step 7: Configure AWS Credentials
     - name: Configure AWS credentials
