@@ -14,27 +14,27 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Step 2: Set Up Node.js (for npm-based validation)
+    # Step 2: Set Up Node.js (use Node.js 20 for future compatibility)
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '20'
 
     # Step 3: Install Dependencies
     - name: Install dependencies
       run: npm install
 
-    # Step 4: HTML Validation with HTMLHint (using npm)
+    # Step 4: HTML Validation with HTMLHint
     - name: Validate HTML files
-      run: npx htmlhint "index.html" 
+      run: npx htmlhint "index.html"
 
-    # Step 5: CSS Validation with stylelint (using npm)
+    # Step 5: CSS Validation with stylelint
     - name: Validate CSS files
-      run: npx stylelint "style.css" 
+      run: npx stylelint "style.css"
 
-    # Step 6: JavaScript Linting with ESLint (using npm).
+    # Step 6: JavaScript Linting with ESLint
     - name: Lint JavaScript
-      run: npx eslint script.js 
+      run: npx eslint script.js
 
     # Step 7: Configure AWS Credentials
     - name: Configure AWS credentials
