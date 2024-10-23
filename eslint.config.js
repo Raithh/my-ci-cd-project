@@ -7,6 +7,11 @@ module.exports = [
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: "module",
+      globals: {
+        window: "readonly",
+        document: "readonly",
+        console: "readonly"
+      },
     },
     rules: {
       "no-console": "warn",       // Warn if there are console statements
@@ -14,10 +19,6 @@ module.exports = [
       "quotes": ["error", "double"], // Enforce double quotes
       "semi": ["error", "always"],   // Enforce semicolons at the end of lines
       "eqeqeq": "error"            // Enforce strict equality
-    },
-    env: {
-      browser: true,
-      es2021: true,
     },
   },
 ];
