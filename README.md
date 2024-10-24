@@ -1,4 +1,6 @@
 🌐 My CI/CD Project: Automated Deployment to AWS S3 & CloudFront 🚀
+
+
 Overview 📜
 Welcome to My CI/CD Project, a demonstration of a streamlined Continuous Integration and Continuous Deployment (CI/CD) pipeline. This project showcases a web application automatically deployed to AWS using GitHub Actions. The core idea is to ensure code quality and manage cloud resources while keeping the project lightweight and efficient.
 
@@ -28,7 +30,7 @@ Key Technologies:
 
 my-ci-cd-project/
 ├── .github/workflows/          # CI/CD workflow files
-├── pictures/                     # pictures
+├── pictures/                   # pictures
 ├── node_modules/               # Node.js modules (ignored from S3 deployment)
 ├── index.html                  # Main HTML file
 ├── style.css                   # Stylesheet
